@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delicious Corner</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff7ed;
+      color: #432818;
+    }
+
+    header {
+      background: white;
+      padding: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: 0 3px 12px #0001;
+    }
+
+    .logo {
+      color: #e85d04;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #432818;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 45px 20px;
+      background: linear-gradient(135deg, #ffedd5, #fdba74);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      margin: 15px 0;
+    }
+
+    .hero h1 span {
+      color: #d9480f;
+    }
+
+    .hero p {
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #e85d04;
+      color: white;
+      border: none;
+      padding: 13px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin: 30px auto 0;
+    }
+
+    .menu-section {
+      padding: 40px 18px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #806f63;
+      margin-bottom: 25px;
+    }
+
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .menu-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px #00000010;
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: 135px;
+      object-fit: cover;
+    }
+
+    .menu-info {
+      padding: 12px;
+    }
+
+    .menu-info h3 {
+      font-size: 16px;
+    }
+
+    .menu-info p {
+      color: #806f63;
+      font-size: 12px;
+      margin: 8px 0;
+    }
+
+    .price {
+      display: block;
+      color: #e85d04;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .add-btn {
+      background: #fff0df;
+      color: #c94b00;
+      border: none;
+      border-radius: 7px;
+      padding: 9px;
+      width: 100%;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .checkout {
+      margin: 15px;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px #00000010;
+    }
+
+    #cart-items {
+      margin: 20px 0;
+    }
+
+    .cart-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cart-row button {
+      padding: 4px 8px;
+      margin: 0 3px;
+      border: none;
+      background: #ffedd5;
+      color: #c94b00;
+      border-radius: 5px;
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 0;
+      font-weight: bold;
+    }
+
+    .total strong {
+      color: #e85d04;
+    }
+
+    .checkout .btn {
+      width: 100%;
+    }
+
+    footer {
+      background: #432818;
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer p {
+      color: #f5d6bd;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    @media (min-width: 650px) {
+      .hero {
+        padding: 65px 10%;
+      }
+
+      .menu-section {
+        padding: 50px 8%;
+      }
+
+      .menu-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .menu-card img {
+        height: 190px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🍴 Delicious Corner</div>
+
+    <nav>
+      <a href="#home">Beranda</a>
+      <a href="#menu">Menu</a>
+      <a href="#checkout">Keranjang</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <p>FRESH • DELICIOUS • AFFORDABLE</p>
+
+    <h1>Makanan Lezat,<br>
+      <span>Bahagia Setiap Saat!</span>
+    </h1>
+
+    <p>
+      Nikmati makanan dan minuman favoritmu
+      dengan rasa yang istimewa.
+    </p>
+
+    <a href="#menu" class="btn">Pesan Sekarang →</a>
+
+    <img
+      src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700"
+      alt="Burger spesial">
+  </section>
+
+  <section class="menu-section" id="menu">
+    <h2>🍔 Menu Favorit Kami</h2>
+    <p class="subtitle">Pilih menu kesukaanmu!</p>
+
+    <div class="menu-container">
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Burger">
+        <div class="menu-info">
+          <h3>Classic Burger</h3>
+          <p>Burger daging dan sayuran segar.</p>
+          <span class="price">Rp25.000</span>
+          <button class="add-btn" onclick="addToCart(1)">+ Tambah</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" alt="Pizza">
+        <div class="menu-info">
+          <h3>Pizza Special</h3>
+          <p>Pizza keju dengan topping pilihan.</p>
+          <span class="price">Rp45.000</span>
+          <button class="add-btn" onclick="addToCart(2)">+ Tambah</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500" alt="Kentang goreng">
+        <div class="menu-info">
+          <h3>Kentang Goreng</h3>
+          <p>Kentang renyah dan gurih.</p>
+          <span class="price">Rp15.000</span>
+          <button class="add-btn" onclick="addToCart(3)">+ Tambah</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500" alt="Es teh">
+        <div class="menu-info">
+          <h3>Es Teh Manis</h3>
+          <p>Minuman segar pelepas dahaga.</p>
+          <span class="price">Rp8.000</span>
+          <button class="add-btn" onclick="addToCart(4)">+ Tambah</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?w=500" alt="Jus jeruk">
+        <div class="menu-info">
+          <h3>Jus Jeruk</h3>
+          <p>Jus jeruk segar dan nikmat.</p>
+          <span class="price">Rp12.000</span>
+          <button class="add-btn" onclick="addToCart(5)">+ Tambah</button>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500" alt="Kopi latte">
+        <div class="menu-info">
+          <h3>Kopi Latte</h3>
+          <p>Kopi susu dengan aroma istimewa.</p>
+          <span class="price">Rp18.000</span>
+          <button class="add-btn" onclick="addToCart(6)">+ Tambah</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="checkout" id="checkout">
+    <h2>🛒 Keranjang Belanja</h2>
+
+    <div id="cart-items">
+      Keranjang masih kosong.
+    </div>
+
+    <div class="total">
+      <span>Total Pembayaran</span>
+      <strong id="cart-total">Rp0</strong>
+    </div>
+
+    <button class="btn" onclick="checkout()">
+      Checkout Sekarang
+    </button>
+  </section>
+
+  <footer>
+    <h3>🍴 Delicious Corner</h3>
+    <p>Menyajikan rasa, menghadirkan kebahagiaan.</p>
+    <p>© 2026 Delicious Corner</p>
+  </footer>
+
+  <script>
+    const menus = [
+      { id: 1, name: "Classic Burger", price: 25000 },
+      { id: 2, name: "Pizza Special", price: 45000 },
+      { id: 3, name: "Kentang Goreng", price: 15000 },
+      { id: 4, name: "Es Teh Manis", price: 8000 },
+      { id: 5, name: "Jus Jeruk", price: 12000 },
+      { id: 6, name: "Kopi Latte", price: 18000 }
+    ];
+
+    let cart = [];
+
+    function rupiah(angka) {
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0
+      }).format(angka);
+    }
+
+    function addToCart(id) {
+      const item = cart.find(p => p.id === id);
+
+      if (item) {
+        item.qty++;
+      } else {
+        const menu = menus.find(p => p.id === id);
+        cart.push({ ...menu, qty: 1 });
+      }
+
+      renderCart();
+    }
+
+    function changeQty(id, jumlah) {
+      const item = cart.find(p => p.id === id);
+
+      if (!item) return;
+
+      item.qty += jumlah;
+      cart = cart.filter(p => p.qty > 0);
+
+      renderCart();
+    }
+
+    function renderCart() {
+      const container = document.getElementById("cart-items");
+      const total = cart.reduce(
+        (sum, item) => sum + item.price * item.qty, 0
+      );
+
+      const jumlahBarang = cart.reduce(
+        (sum, item) => sum + item.qty, 0
+      );
+
+      document.getElementById("cart-total").textContent = rupiah(total);
+
+      if (cart.length === 0) {
+        container.textContent = "Keranjang masih kosong.";
+      } else {
+        container.innerHTML = cart.map(item => `
+          <div class="cart-row">
+            <div>
+              <strong>${item.name}</strong><br>
+              ${rupiah(item.price * item.qty)}
+            </div>
+
+            <div>
+              <button onclick="changeQty(${item.id}, -1)">−</button>
+              ${item.qty}
+              <button onclick="changeQty(${item.id}, 1)">+</button>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      document.querySelector('a[href="#checkout"]').textContent =
+        "🛒 Keranjang (" + jumlahBarang + ")";
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Silakan pilih menu terlebih dahulu!");
+        return;
+      }
+
+      const detail = cart.map(item =>
+        item.name + " x " + item.qty
+      ).join("\n");
+
+      const total = cart.reduce(
+        (sum, item) => sum + item.price * item.qty, 0
+      );
+
+      alert(
+        "PESANAN DELICIOUS CORNER\n\n" +
+        detail +
+        "\n\nTotal: " + rupiah(total) +
+        "\n\nCheckout berhasil disimulasikan!"
+      );
+    }
+
+    renderCart();
+  </script>
+
+</body>
+</html>
+
+           
+    
